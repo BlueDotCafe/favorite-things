@@ -1,22 +1,24 @@
 $(document).ready(function() {
-  $(".one").hide();
-  $("#input-form").submit(function() {
+
+  $("form#blanks").submit(function() {
     event.preventDefault();
 
-    var favs = ["first", "second", "third", "fourth", "fifth"];
+    var favorites = ["fav1", "fav2", "fav3", "fav4"];
+/**
+   var capItems = items.map(function(item) {
+     return item.toUpperCase();
+   });
+   **/
 
-      favs.forEach(function(fav) {
-        var userInput = $("input#" + fav).val();
-        $("." + fav).text(userInput);
-      };
+  favorites.forEach(function(item) {
+    var userInput = $("input#" + item).val();
+    $("." + item).text(userInput.toUpperCase());
+  });
 
-      $(".two").show();
 
-      function allClear() {
-    $("li").remove(".two");
+  $(".story").show();
 
-    }
-
+  });
 });
 
 
